@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yayoi Kusama</title>
+    <style>
+
+        /* Position the navbar container inside the image */
+        .navcontainer {
+            position: absolute;
+            margin: 20px;
+            width: auto;
+            height: 500px;
+        }
+
+        /* The navbar */
+        .topnav {
+            overflow: hidden;
+            background-color: transparent;
+        }
+
+        /* Navbar links */
+        .topnav a {
+            float: left;
+            font-family: "Helvetica Neue", serif;
+            font-weight: bolder;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .bg-img {
+            /* The image used */
+            width: 2170px;
+            height: 1230px;
+
+            /* Center and scale the image nicely */
+            background: url("infinity.jpg") no-repeat center;
+            background-size: cover;
+
+            /* Needed to position the navbar */
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        /* Centered video */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+<div class="bg-img">
+    <div class="navcontainer">
+        <div class="topnav">
+            <a href="index.html">HOME</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="about.html">ABOUT</a>
+            <a href="video.html">INTERVIEW</a>
+        </div>
+    </div>
+</div>
+
+<div class="centered">
+<video width="1120" height="840" controls>
+    <source src="interview.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</div>
+
+</div>
+</body>
+</html>

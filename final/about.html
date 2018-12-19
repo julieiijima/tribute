@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <title>Yayoi Kusama</title>
+    <style>
+
+        /*!* text *!*/
+        /*.text {*/
+            /*position: absolute;*/
+            /*left: 20px;*/
+            /*font-family: 'Permanent Marker', cursive;*/
+            /*font-size: 400px;*/
+            /*text-align: right;*/
+            /*color: black;*/
+            /*line-height: 380px;*/
+            /*height: 800px;*/
+        /*}*/
+
+
+        /* Position the navbar container inside the image */
+        .navcontainer {
+            position: absolute;
+            margin: 20px;
+            width: auto;
+            height: 500px;
+        }
+
+        /* The navbar */
+        .topnav {
+            overflow: hidden;
+            background-color: transparent;
+        }
+
+        /* Navbar links */
+        .topnav a {
+            float: left;
+            font-family: "Helvetica Neue", serif;
+            font-weight: bolder;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Timeline Properties start here */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* The image used */
+            width: 2000px;
+            height: 1500px;
+
+            /* Center and scale the image nicely */
+            background: url("bkgrnd.jpg") repeat center;
+            background-size: cover;
+
+            /* Needed to position the navbar */
+            position: relative;
+
+            font-family: Helvetica, sans-serif;
+        }
+
+        /*!* Set a background color *!*/
+        /*body {*/
+            /*background-color: green;*/
+            /*font-family: Helvetica, sans-serif;*/
+        /*}*/
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            text-align: center;
+        }
+
+        /* Container around content */
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        /* The circles on the timeline */
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: orangered;
+            border: 4px solid white;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Place the container to the left */
+        .left {
+            left: 0;
+        }
+
+        /* Place the container to the right */
+        .right {
+            left: 50%;
+        }
+
+        /* Add arrows to the left container (pointing right) */
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        /* Add arrows to the right container (pointing left) */
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        /* Fix the circle for containers on the right side */
+        .right::after {
+            left: -16px;
+        }
+
+        /* The actual content */
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        /* Media queries - Responsive timeline on screens less than 600px wide */
+        @media screen and (max-width: 600px) {
+            /* Place the timelime to the left */
+            .timeline::after {
+                left: 31px;
+            }
+
+            /* Full-width containers */
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            /* Make sure that all arrows are pointing leftwards */
+            .container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            /* Make sure all circles are at the same spot */
+            .left::after, .right::after {
+                left: 15px;
+            }
+
+            /* Make all right containers behave like the left ones */
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!--<div class="text">-->
+    <!--<p>Yayoi Kusama </p>-->
+<!--</div>-->
+
+<div class="navcontainer">
+    <div class="topnav">
+        <a href="index.html">HOME</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="about.html">ABOUT</a>
+        <a href="video.html">INTERVIEW</a>
+    </div>
+
+<div class="timeline">
+    <div class="container left">
+        <div class="content">
+            <h2>1929</h2>
+            <p>Born in Matsumoto, Nagano in Japan to a family of merchants.</p>
+        </div>
+    </div>
+    <div class="container right">
+        <div class="content">
+            <h2>1939</h2>
+            <p>Starts painting at 10 years old to escape hallucinations, which included flowers speaking to her and <q>flashes of light, auras, or dense fields of dots.</q> </p>
+        </div>
+    </div>
+    <div class="container left">
+        <div class="content">
+            <h2>1950</h2>
+            <p>Gains popularity in Japan as an artist. Infinity Nets, her first series or large-scale paintings were directly incorporated from her hallucinations. </p>
+        </div>
+    </div>
+    <div class="container right">
+        <div class="content">
+            <h2>1957 </h2>
+            <p>Moves to Seattle, U.S. where she held an exhibition for her paintings. After living there for a year, she moves to New York City and starts to build her <q>reputation as an avante-garde movement</q> leader. Many of her works include <q>large paintings, soft sculptures, and environmental sculptures using mirrors and electrical lights,</q> which are widely known as Infinity Rooms/Mirrors. </p>
+        </div>
+    </div>
+    <div class="container left">
+        <div class="content">
+            <h2>1960s</h2>
+            <p>Conducts body-painting festivals, fashion shows, and anti-war demonstrations.</p>
+        </div>
+    </div>
+    <div class="container right">
+        <div class="content">
+            <h2>1973</h2>
+            <p>Returns to Japan. While creating art for shows, she starts writing novels and anthologies. </p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <h2>1986 - 1993</h2>
+            <p>Holds solo exhibitions across the globe: France, New York, MoMA, England, and much more. </p>
+        </div>
+    </div>
+    <div class="container right">
+        <div class="content">
+            <h2>1996</h2>
+            <p>Mainly starts to show her work at galleries in New York. Her solo show in New York is named the Best Gallery Show from the International Association of Art Critics.</p>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <h2>2004</h2>
+            <p>Her solo exhibition <q>KUSAMATRIX</q> starts at Mori Museum in Tokyo. This exhibition drew visitors totaling 520,000 people. In the same year, another solo exhibition started at The National Museum of Modern Art, Tokyo</p>
+        </div>
+    </div>
+    <div class="container right">
+        <div class="content">
+            <h2>2006</h2>
+            <p>Receives National Lifetime Achievement Awards, the Order of the Rising Sun, Gold Rays with Losette and The Praemium Imperiale -Painting- in 2006.</p>
+        </div>
+    </div>
+    <div class="container left">
+        <div class="content">
+            <h2>2008</h2>
+            <p>Documentary film : <q>Yayoi Kusama, I adore myself</q> releases in Japan and also screens at the international film festival and museum. </p>
+        </div>
+    </div>
+    <div class="container right">
+        <div class="content">
+            <h2>2009</h2>
+            <p>Solo exhibition at Gagosian Gallery NY and LA, Victora Miro Gallery in London and Padiglione d'Arte Contemporanea in Milan. Honored as Person of Cultural Merits in Japan.</p>
+        </div>
+    </div>
+    <div class="container left">
+        <div class="content">
+            <h2>2010</h2>
+            <p>Solo exhibition and permanent outdoor sculpture at Towada Art Center in Japan and at Victoria Miro Gallery in London, fiac in Paris.</p>
+        </div>
+    </div>
+    <div class="container right">
+        <div class="content">
+            <h2>2011</h2>
+            <p>Solo exhibition at Gagosian gallery (Roma), Victoria Miro Gallery (London). Europe and North America retrospective tour starts at Museo Nacional Centro De Arte Reina Sofia, Madrid traveling to Centre Pompidou (Paris), TATE MODERN (London) and Whitney Museum (New York). Solo exhibition at Watari Art Museum (Tokyo). Participates in the 2011 Chengdu Biennale (China). Programs solo exhibition at the Queensland Art Gallery (Brisbane) in November.</p>
+        </div>
+    </div>
+    <div class="container left">
+        <div class="content">
+            <h2>2012 </h2>
+            <p>“Eternity of Eternal Eternity", recent works solo national traveling show started at National Museum of Art, Osaka traveled to The Museum of Modern Art, Saitama, Matsumoto City Museum of Art, Nagano, Niigata City Art Museum. In the next year, it travelled to Shizuoka Prefectural Museum of Art, Oita Art Museum and the Museum of Art, Koch. Solo exhibition at Victoria.</p>
+        </div>
+    </div>
+    <div class="container right">
+        <div class="content">
+            <h2>- 2018</h2>
+            <p>She continues to hold various shows and galleries at Museums all around the world, at age 89. Her work influences artists of all ages, including Andy Warhold, Carolee Schneemann, and Yoko Ono. Many describe her work as always being ahead of time, being the forefront of major artistic movements. </p>
+        </div>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>
